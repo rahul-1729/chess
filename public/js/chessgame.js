@@ -88,4 +88,25 @@ const getPieceUnicode=(piece)=>{
     return unicodePieces[pieceCode] || "";
 }
 
+socket.on("playerRole",function(role){
+     playerRole=role;
+     renderBoard();
+});
+
+
+socket.on("spetatorRole",function(){
+    playerRole=null;
+    renderBoard();
+})
+
+socket.on("boardState",function(fen){
+     chess.load(fen);
+     renderBoard();
+})
+
+socket.on("move",function(move){
+    chess.load(move);
+    renderBoard();
+})
+
 renderBoard()
