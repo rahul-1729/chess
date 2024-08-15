@@ -10,8 +10,8 @@
             display: grid;
             grid-template-columns: repeat(8, minmax(0, 1fr));
             grid-template-rows: repeat(8, minmax(0, 1fr));
-            width: 400px;
-            height: 400px;
+            width: 550px;
+            height: 550px;
             transform: rotate(0deg);
         }
 
@@ -21,7 +21,8 @@
         }
 
         .piece.black {
-            color: black;
+            color: rgb(59, 59, 59);
+            filter: drop-shadow(0 0 2px rgb(255, 254, 254));
         }
 
         .flipped {
@@ -35,11 +36,13 @@
         }
 
         .square.light {
-            background-color: #f0d9b5;
+            /* background-color: #f0d9b5; */
+            background-color: #ffffff;
         }
 
         .square.dark {
-            background-color: #b58863;
+            /* background-color: #b58863; */
+            background-color: #000000;
         }
 
         .piece {
@@ -63,7 +66,7 @@
 </head>
 <body>
     <div class="w-full h-screen flex items-center  justify-center bg-zinc-900">
-       <div class=" chessboard w-96 h-96 bg-red-800"></div>
+       <div class=" chessboard w-150 h-150 bg-red-800"></div>
 
     </div>
 
