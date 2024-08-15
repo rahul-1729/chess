@@ -40,6 +40,29 @@ io.on("connection",function(uniquesocket){
          if(uniquesocket.id===players.white){delete players.white}
          else if(uniquesocket.id===players.black){delete players.black}
     })
+
+    uniquesocket.on("move",(move)=>{
+        try{
+                if(chess.turn()==='w' && socket.id!=players.white)
+                {
+                    return;
+                }
+                if(chess.turn()==='b' && socket.id!=players.black)
+                {
+                    return;
+                }
+
+               const result = chess.move(move);  
+               if(result)
+               {
+                  currentPlayer=chess.turn();
+               }
+                
+        }catch(err)
+        {
+
+        }
+    })
 })
 
 server.listen(3000,()=>{
